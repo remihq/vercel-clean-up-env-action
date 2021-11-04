@@ -1,0 +1,22 @@
+name: "Vercel Clean Up Environment Variables"
+description: "A GitHub Action that ensures certain environment variables are removed from the project's environment variables in Vercel"
+author: "Dan Conger"
+inputs:
+  token:
+    required: true
+    description: "Vercel API Token"
+  teamId:
+    required: false
+    description: "Vercel API Team ID - used to target a Team or Organization, default is personal"
+  projectName:
+    required: true
+    description: "The name of the project in Vercel"
+  gitBranch:
+    required: true
+    description: "A gitBranch for which to clean up env vars in Vercel."
+runs:
+  using: "node12"
+  main: "dist/index.js"
+branding:
+  icon: anchor
+  color: gray-dark
